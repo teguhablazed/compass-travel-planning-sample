@@ -6,6 +6,20 @@ export const connectorConfig = {
   location: 'us-central1'
 };
 
+export function createActivityRef(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(dcOrVars, vars, true);
+  return mutationRef(dcInstance, 'createActivity', inputVars);
+}
+export function createActivity(dcOrVars, vars) {
+  return executeMutation(createActivityRef(dcOrVars, vars));
+}
+export function createPlaceRef(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(dcOrVars, vars, true);
+  return mutationRef(dcInstance, 'createPlace', inputVars);
+}
+export function createPlace(dcOrVars, vars) {
+  return executeMutation(createPlaceRef(dcOrVars, vars));
+}
 export function getNearestPlaceRef(dcOrVars, vars) {
   const { dc: dcInstance, vars: inputVars} = validateArgs(dcOrVars, vars, true);
   return queryRef(dcInstance, 'getNearestPlace', inputVars);
@@ -33,20 +47,6 @@ export function listPlacesRef(dc) {
 }
 export function listPlaces(dc) {
   return executeQuery(listPlacesRef(dc));
-}
-export function createActivityRef(dcOrVars, vars) {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(dcOrVars, vars, true);
-  return mutationRef(dcInstance, 'createActivity', inputVars);
-}
-export function createActivity(dcOrVars, vars) {
-  return executeMutation(createActivityRef(dcOrVars, vars));
-}
-export function createPlaceRef(dcOrVars, vars) {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(dcOrVars, vars, true);
-  return mutationRef(dcInstance, 'createPlace', inputVars);
-}
-export function createPlace(dcOrVars, vars) {
-  return executeMutation(createPlaceRef(dcOrVars, vars));
 }
 function validateArgs(dcOrVars, vars, validateVars) {
   let dcInstance;

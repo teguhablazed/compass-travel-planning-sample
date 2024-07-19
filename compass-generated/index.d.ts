@@ -123,6 +123,24 @@ export interface Place_Key {
 
 
 /* Allow users to create refs without passing in DataConnect */
+export function createActivityRef(vars: CreateActivityVariables): MutationRef<CreateActivityResponse, CreateActivityVariables>;
+/* Allow users to pass in custom DataConnect instances */
+export function createActivityRef(dc: DataConnect, vars: CreateActivityVariables): MutationRef<CreateActivityResponse,CreateActivityVariables>;
+
+export function createActivity(vars: CreateActivityVariables): MutationPromise<CreateActivityResponse, CreateActivityVariables>;
+export function createActivity(dc: DataConnect, vars: CreateActivityVariables): MutationPromise<CreateActivityResponse,CreateActivityVariables>;
+
+
+/* Allow users to create refs without passing in DataConnect */
+export function createPlaceRef(vars: CreatePlaceVariables): MutationRef<CreatePlaceResponse, CreatePlaceVariables>;
+/* Allow users to pass in custom DataConnect instances */
+export function createPlaceRef(dc: DataConnect, vars: CreatePlaceVariables): MutationRef<CreatePlaceResponse,CreatePlaceVariables>;
+
+export function createPlace(vars: CreatePlaceVariables): MutationPromise<CreatePlaceResponse, CreatePlaceVariables>;
+export function createPlace(dc: DataConnect, vars: CreatePlaceVariables): MutationPromise<CreatePlaceResponse,CreatePlaceVariables>;
+
+
+/* Allow users to create refs without passing in DataConnect */
 export function getNearestPlaceRef(vars: GetNearestPlaceVariables): QueryRef<GetNearestPlaceResponse, GetNearestPlaceVariables>;
 /* Allow users to pass in custom DataConnect instances */
 export function getNearestPlaceRef(dc: DataConnect, vars: GetNearestPlaceVariables): QueryRef<GetNearestPlaceResponse,GetNearestPlaceVariables>;
@@ -154,23 +172,5 @@ export function listPlacesRef(dc: DataConnect): QueryRef<ListPlacesResponse,unde
 
 export function listPlaces(): QueryPromise<ListPlacesResponse, undefined>;
 export function listPlaces(dc: DataConnect): QueryPromise<ListPlacesResponse,undefined>;
-
-
-/* Allow users to create refs without passing in DataConnect */
-export function createActivityRef(vars: CreateActivityVariables): MutationRef<CreateActivityResponse, CreateActivityVariables>;
-/* Allow users to pass in custom DataConnect instances */
-export function createActivityRef(dc: DataConnect, vars: CreateActivityVariables): MutationRef<CreateActivityResponse,CreateActivityVariables>;
-
-export function createActivity(vars: CreateActivityVariables): MutationPromise<CreateActivityResponse, CreateActivityVariables>;
-export function createActivity(dc: DataConnect, vars: CreateActivityVariables): MutationPromise<CreateActivityResponse,CreateActivityVariables>;
-
-
-/* Allow users to create refs without passing in DataConnect */
-export function createPlaceRef(vars: CreatePlaceVariables): MutationRef<CreatePlaceResponse, CreatePlaceVariables>;
-/* Allow users to pass in custom DataConnect instances */
-export function createPlaceRef(dc: DataConnect, vars: CreatePlaceVariables): MutationRef<CreatePlaceResponse,CreatePlaceVariables>;
-
-export function createPlace(vars: CreatePlaceVariables): MutationPromise<CreatePlaceResponse, CreatePlaceVariables>;
-export function createPlace(dc: DataConnect, vars: CreatePlaceVariables): MutationPromise<CreatePlaceResponse,CreatePlaceVariables>;
 
 
